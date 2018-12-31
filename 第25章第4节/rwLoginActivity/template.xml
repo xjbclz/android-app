@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="1"
+    name="RuWang Login Activity"
+    description="Creates a new login activity, allowing users to enter a phone number and password to log in to or register with your application."
+    requireAppTheme="true"
+    minApi="17"
+    minBuildApi="17">
+
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="activityClass"
+        name="Activity Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="rwLoginActivity"
+        help="The name of the activity class to create" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(activityClass)}"
+        default="activity_rw_login"
+        help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="activityTitle"
+        name="Title"
+        type="string"
+        constraints="nonempty"
+        default="登录"
+        help="The name of the activity." />
+    
+    <parameter
+        id="passwordLength"
+        name="Password Length"
+        type="string"
+        constraints="nonempty"
+        default="6"
+        help="设置密码长度" />    
+        
+    <parameter
+        id="parentActivityClass"
+        name="Hierarchical Parent"
+        type="string"
+        constraints="activity|exists|empty"
+        default=""
+        help="The hierarchical parent activity, used to provide a default implementation for the 'Up' button" />    
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <thumbs>
+        <thumb>template_rw_login_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
