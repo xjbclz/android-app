@@ -1,0 +1,14 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android" >
+    <shortcut
+        android:shortcutId="settings"
+        android:icon="@drawable/ic_setting"
+        android:shortcutShortLabel="@string/shortcut_settings"
+        android:shortcutLongLabel="@string/shortcut_long_settings"
+        >
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.example.shortcut"
+            android:targetClass="com.example.shortcut.SettingsActivity"
+            />
+    </shortcut>
+</shortcuts>
